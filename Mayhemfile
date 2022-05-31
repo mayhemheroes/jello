@@ -2,7 +2,7 @@ project: jello
 target: fuzz
 
 tests: 
-    - file://./fuzz/corpus
+    - file:///jello/fuzz/corpus
 
 cmds:
     - cmd: fuzz/fuzz.py
