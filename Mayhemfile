@@ -1,18 +1,8 @@
 project: jello
 target: fuzz
 
-tests:
-    - file://./fuzz/corpus/0
-    - file://./fuzz/corpus/1
-    - file://./fuzz/corpus/2
-    - file://./fuzz/corpus/3
-    - file://./fuzz/corpus/4
-    - file://./fuzz/corpus/5
-    - file://./fuzz/corpus/6
-    - file://./fuzz/corpus/7
-    - file://./fuzz/corpus/8
-    - file://./fuzz/corpus/9
+tests: null
 
 cmds:
-    - cmd: fuzz/fuzz.py
+    - cmd: fuzz/fuzz.py fuzz/corpus
       libfuzzer: true
