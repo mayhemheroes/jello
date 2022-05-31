@@ -5,9 +5,6 @@ import os
 import io
 import json
 
-with atheris.instrument_imports():
-    from jello import cli
-
 # From: https://stackoverflow.com/questions/11130156/suppress-stdout-stderr-print-from-python-functions
 # Define a context manager to suppress stdout and stderr.
 class suppress_stdout_stderr(object):
@@ -38,6 +35,10 @@ class suppress_stdout_stderr(object):
         # Close all file descriptors
         for fd in self.null_fds + self.save_fds:
             os.close(fd)
+ 
+with suppress_stdout_stderr():
+    with atheris.instrument_imports():
+        from jello import cli
 
 @atheris.instrument_func
 def TestOneInput(data):
