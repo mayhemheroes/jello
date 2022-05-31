@@ -1,4 +1,4 @@
-FROM python:3.8-bullseye
+FROM python:3.10-bullseye
 RUN pip3 install atheris
 
 COPY . /jello
