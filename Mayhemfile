@@ -1,8 +1,9 @@
 project: jello
 target: fuzz
 
-tests: null
+tests:
+    - file://./fuzz/corpus/
 
 cmds:
-    - cmd: /jello/fuzz/fuzz.py /jello/fuzz/corpus/
+    - cmd: /jello/fuzz/fuzz.py
       libfuzzer: true
