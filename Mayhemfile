@@ -4,5 +4,5 @@ target: fuzz
 tests: null
 
 cmds:
-    - cmd: fuzz/fuzz.py corpus
+    - cmd: fuzz/fuzz.py fuzz/corpus
       libfuzzer: true
