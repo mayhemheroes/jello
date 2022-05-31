@@ -7,6 +7,10 @@ import json
 
 # From: https://stackoverflow.com/questions/11130156/suppress-stdout-stderr-print-from-python-functions
 # Define a context manager to suppress stdout and stderr.
+# os.dup2(os.dup(1),2)
+# 
+sys.stdout = sys.stderr
+
 class suppress_stdout_stderr(object):
     '''
     A context manager for doing a "deep suppression" of stdout and stderr in 
