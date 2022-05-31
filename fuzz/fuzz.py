@@ -7,8 +7,6 @@ import json
 
 # From: https://stackoverflow.com/questions/11130156/suppress-stdout-stderr-print-from-python-functions
 # Define a context manager to suppress stdout and stderr.
-# os.dup2(os.dup(1),2)
-# 
 sys.stdout = sys.stderr
 
 class suppress_stdout_stderr(object):
@@ -40,7 +38,9 @@ class suppress_stdout_stderr(object):
         for fd in self.null_fds + self.save_fds:
             os.close(fd)
 
-from jello import cli
+with suppress_stdout_stderr():
+    with atheris.instrument_imports():
+        from jello import cli
 
 @atheris.instrument_func
 def TestOneInput(data):
@@ -56,9 +56,9 @@ def TestOneInput(data):
     with suppress_stdout_stderr():
         cli.main()  
 
-print(sys.argv)
+# print(sys.argv)
 # sys.argv = [sys.argv[0], './corpus/']
-atheris.instrument_all()
+# atheris.instrument_all()
 
 atheris.Setup(sys.argv, TestOneInput)
 sys.argv = [sys.argv[0], '-s']
