@@ -52,7 +52,8 @@ def TestOneInput(data):
     with suppress_stdout_stderr():
         cli.main()  
 
-
+print(sys.argv)
+# sys.argv = [sys.argv[0], './corpus/']
 atheris.instrument_all()
 
 atheris.Setup(sys.argv, TestOneInput)
