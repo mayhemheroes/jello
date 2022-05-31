@@ -4,5 +4,5 @@ target: fuzz
 tests: null
 
 cmds:
-    - cmd: ./fuzz.py ./corpus/
+    - cmd: /jello/fuzz/fuzz.py /jello/fuzz/corpus/
       libfuzzer: true
