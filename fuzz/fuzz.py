@@ -1,4 +1,4 @@
-from readline import insert_text
+#!/usr/local/bin/python3
 import atheris
 import sys
 import os
