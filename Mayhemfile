@@ -1,7 +1,7 @@
 project: jello
 target: fuzz
 
-tests:
+testsuite:
     - file://./fuzz/corpus/
 
 cmds:
