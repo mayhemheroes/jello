@@ -1,9 +1,9 @@
 project: jello
-target: fuzz
+target: fuzz_json_schema_generator
 
 testsuite:
     - file://./fuzz/corpus/
 
 cmds:
-    - cmd: /jello/fuzz/fuzz.py
+    - cmd: /jello/fuzz/fuzz_json_schema_generator.py
       libfuzzer: true

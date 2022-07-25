@@ -44,8 +44,9 @@ with suppress_stdout_stderr():
 
 @atheris.instrument_func
 def TestOneInput(data):
+    fdp = atheris.FuzzedDataProvider(data)
     try:
-        in_str = data.decode("utf-8")
+        in_str = fdp.ConsumeUnicode(len(data))
         # Make sure to give it valid json
         # Could probably use the custom mutator here
         json.loads(in_str)
